@@ -19,10 +19,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "src/views"));
 app.set("view engine", "ejs");
 
+app.use("/", rootRouter);
 app.use("/checklists", checklistRouter);
 app.use("/checklists", taskRouter.checkListDependent);
-
-app.use("/", rootRouter);
+app.use("/tasks", taskRouter.simple);
 
 app.listen(8081, () => {
     console.log("O servidor foi iniciado!");
