@@ -24,6 +24,6 @@ app.use("/checklists", checklistRouter);
 app.use("/checklists", taskRouter.checkListDependent);
 app.use("/tasks", taskRouter.simple);
 
-app.listen(8081, () => {
+app.listen(8080, () => {
     console.log("O servidor foi iniciado!");
 });
