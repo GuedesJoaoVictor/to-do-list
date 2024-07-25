@@ -60,7 +60,7 @@ router.put("/:id", async (req, res) => {
         res.redirect("/checklists");
     } catch (error) {
         let errors = error.errors;
-        res.status(422).render("checklists/edit", {checkList: {...checkList, errors}});
+        res.status(422).render("checklists/edit", {checkList: {...checkList, error}});
     }
 });
 
